@@ -67,6 +67,19 @@ calendarView.setOnDayClickListener(new OnDayClickListener() {
     }
 });
 ```
+### Page Change Callback
+When change the calender page, a callback function will be called passing the new page Calendar object
+```java
+calendarView.setOnForwardPageChangeListener(new OnCalendarPageChangeListener() {
+    @Override
+    public void onChange(Calendar newDate) {
+        Toast.makeText(getApplicationContext(),
+            "New page is: " + newDate.get(Calendar.YEAR) +"" +newDate.get(Calendar.MONTH)
+            , Toast.LENGTH_SHORT).show();
+        }
+    });
+```
+
 
 ### Getting a selected days in the picker mode:
 If you want to get all selected days, especially if you use multi date or range picker you should use the following code:
